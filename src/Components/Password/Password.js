@@ -14,14 +14,12 @@ import {
 
 import {useForm} from "react-hook-form";
 
-
 const FormPassword = ({handleCloseModal}) => {
   let navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: {errors},
-    
   } = useForm();
 
   const onGoToApp = () => {
@@ -33,24 +31,21 @@ const FormPassword = ({handleCloseModal}) => {
     <form onSubmit={handleSubmit(onGoToApp)}>
       <Grid container alignItems="center" justify="center" direction="column">
         <Grid item padding={3}>
-          <>
-            <InputLabel htmlFor="password">Password</InputLabel>
-            <Input
-              type="password"
-              id="password"
-              aria-describedby="my-helper-text"
-              {...register("password", {
-                required: Params.messagePassword,
-                validate: (val) => {
-                  if (val !== Params.myPassword) {
-                    return Params.messagePassword;
-                  }
-                  return;
-                },
-              })}
-            />
-          </>
-
+          <InputLabel htmlFor="password">Password</InputLabel>
+          <Input
+            type="password"
+            id="password"
+            aria-describedby="my-helper-text"
+            {...register("password", {
+              required: Params.messagePassword,
+              validate: (val) => {
+                if (val !== Params.myPassword) {
+                  return Params.messagePassword;
+                }
+                return;
+              },
+            })}
+          />
           <FormHelperText style={{color: "red"}} id="my-helper-text">
             {errors?.password?.message}
           </FormHelperText>

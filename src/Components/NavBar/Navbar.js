@@ -12,11 +12,9 @@ function Navbar() {
       <AppBar position="static">
         <Toolbar>
           <Container  maxWidth="xl">
-
           <Link to="/users" className={styles.navBarItem}>
             Users List
           </Link>
-
           <Link to="/campaign"  className={styles.navBarItem}>Campaigns</Link>
           </Container>
         </Toolbar>
